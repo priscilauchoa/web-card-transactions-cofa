@@ -3,6 +3,7 @@
 export interface Card {
   id: string;
   description: string;
+  type: string;
 }
 
 export interface Transaction {
