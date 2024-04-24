@@ -6,9 +6,11 @@ import { Card as CardType } from "../../ApiClient/index";
 
 function Dashboard() {
   const [cardSelected, setCardSelected] = useState<CardType>()
+  const [amount, setAmount] = useState<string>('')
   const cards = useFetchCards()
   const handleSelectCard = (card: CardType) => {
     setCardSelected(card)
+    setAmount('')
   }
   return (
     <>
@@ -19,7 +21,7 @@ function Dashboard() {
           )
         })}
       </div>
-      {cardSelected && <CardDashboard card={cardSelected} />}
+      {cardSelected && <CardDashboard card={cardSelected} amount={amount} />}
     </>
   )
 }
