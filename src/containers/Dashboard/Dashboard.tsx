@@ -3,13 +3,7 @@ import useFetchCards from "../../hooks/useFetchCards"
 import React, { useState } from "react";
 import CardDashboard from "../CardDashboard/CardDashboard";
 import { Card as CardType } from "../../ApiClient/index";
-import styled from '@emotion/styled'
-
-const CardContainer = styled.div`
-    display: flex;
-    justify-content: space-between;
-    width: 75vw;
-`
+import { CardContainer } from "./styled";
 
 function Dashboard() {
   const [cardSelected, setCardSelected] = useState<CardType>()

@@ -1,20 +1,7 @@
-
 import React from 'react'
 import { Card, Transaction } from '../../ApiClient/index'
-import styled from '@emotion/styled'
+import { TransactionContainer } from './styled'
 
-interface TransactionProps {
-  primary: boolean
-}
-const TransactionContainer = styled.li<TransactionProps>`
-    display: flex;
-    justify-content: space-between;
-    padding: 0 20px;
-    margin: 18px 0px;
-    border-radius: 8px;
-    color: black;
-    background-color: ${props => (props.primary ? '#ECECEC' : '#C7EDFF')};
-`
 
 interface TransactionDetailsProps {
   filteredData: Array<Transaction>

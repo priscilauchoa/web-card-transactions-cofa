@@ -1,22 +1,7 @@
 import React from "react";
 import { Card as CardType } from "../../ApiClient/index";
-import styled from "@emotion/styled"
+import CardContainer from "./styled";
 
-interface CardContainerProps {
-  primary: boolean
-}
-const CardContainer = styled.div<CardContainerProps>`
-    width: 35%;
-    height: 116px;
-    color: black;
-    padding: 0 20px;
-    text-align: start;
-    border-radius: 8px;
-    background-color: ${props => (props.primary ? '#ECECEC' : '#C7EDFF')};
-    &:hover {
-        color: black;
-  }
-`
 interface CardProps {
   card: CardType;
   onSelect: (card: CardType) => void;
