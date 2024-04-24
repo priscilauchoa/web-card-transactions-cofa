@@ -1,30 +1,28 @@
-# React + TypeScript + Vite
+# Card Transaction Overview
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Assesment for [this task](TASK.md)
 
-Currently, two official plugins are available:
+### Some information about the solution:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+* Tech stack: TypeScript, React, Emotion (styles).
+* Node: v21.6.2
+* Yarn: v1.22.22
 
-## Expanding the ESLint configuration
+I utilized the provided API to retrieve data for both the card and the transaction entities. 
+Furthermore, I extended the card data model by incorporating the "type" property to distinguish between private and business cards.
+This enabled me to tailor the styling of transactions dynamically, ensuring consistency with the selected card.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Running the app
 
-- Configure the top-level `parserOptions` property like this:
+From the app's root directory, run the following commands in your terminal:
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+#### Install dependencies
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+```yarn```
+
+#### Run the project
+
+```yarn dev```
+
+By default it will run in the following address:
+http://localhost:5173/
