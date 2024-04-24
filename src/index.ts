@@ -12,13 +12,13 @@ export interface Transaction {
 }
 
 export async function getCards(): Promise<Card[]> {
-  const cards = await (await import("./data/cards.json")).default;
+  const cards = await (await import("./ApiClient/data/cards.json")).default;
   return cards;
 }
 
 export async function getTransactions(cardId: string): Promise<Card[]> {
   const transactions: Record<string, Transaction[]> = await (
-    await import("./data/transactions.json")
+    await import("./ApiClient/data/transactions.json")
   ).default;
 
   if (transactions[cardId]) {
