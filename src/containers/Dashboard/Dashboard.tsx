@@ -3,25 +3,30 @@ import useFetchCards from "../../hooks/useFetchCards"
 import React, { useState } from "react";
 import CardDashboard from "../CardDashboard/CardDashboard";
 import { Card as CardType } from "../../ApiClient/index";
+import styled from '@emotion/styled'
+
+const CardContainer = styled.div`
+    display: flex;
+    justify-content: space-between;
+    width: 75vw;
+`
 
 function Dashboard() {
   const [cardSelected, setCardSelected] = useState<CardType>()
-  const [amount, setAmount] = useState<string>('')
   const cards = useFetchCards()
   const handleSelectCard = (card: CardType) => {
     setCardSelected(card)
-    setAmount('')
   }
   return (
     <>
-      <div>
+      <CardContainer>
         {cards.map((card) => {
           return (
             <Card key={card.id} card={card} onSelect={handleSelectCard} />
           )
         })}
-      </div>
-      {cardSelected && <CardDashboard card={cardSelected} amount={amount} />}
+      </CardContainer>
+      {cardSelected && <CardDashboard card={cardSelected} />}
     </>
   )
 }

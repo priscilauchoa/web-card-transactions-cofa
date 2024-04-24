@@ -6,12 +6,12 @@ import TransactionFilter from "../../components/TransactionFilter/TransactionFil
 
 interface CardDashboardProps {
   card: CardType;
-  amount: string;
 }
 
-function CardDashboard({ card, amount }: CardDashboardProps) {
+function CardDashboard({ card }: CardDashboardProps) {
   const transactions = useFetchTransactions(card.id)
   const [filteredTransactions, setFilteredTransactions] = useState<Array<Transaction>>()
+
 
   useEffect(() => {
     setFilteredTransactions(transactions);
@@ -24,7 +24,7 @@ function CardDashboard({ card, amount }: CardDashboardProps) {
 
   return (
     <>
-      {transactions && <TransactionFilter amount={amount} transactions={transactions} onFiltered={HandleOnFiltered} />}
+      {transactions && <TransactionFilter card={card} transactions={transactions} onFiltered={HandleOnFiltered} />}
       {filteredTransactions &&
         <TransactionDetails card={card}
           filteredData={filteredTransactions}
