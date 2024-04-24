@@ -3,6 +3,7 @@ import styled from "@emotion/styled";
 interface TransactionProps {
   primary: boolean;
 }
+
 export const TransactionContainer = styled.li<TransactionProps>`
   display: flex;
   justify-content: space-between;

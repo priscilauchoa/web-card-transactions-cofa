@@ -6,10 +6,10 @@ import { Card as CardType } from "../../ApiClient/index";
 import { CardContainer } from "./styled";
 
 function Dashboard() {
-  const [cardSelected, setCardSelected] = useState<CardType>()
-  const cards = useFetchCards()
+  const [selectedCard, setSelectedCard] = useState<CardType>();
+  const cards = useFetchCards();
   const handleSelectCard = (card: CardType) => {
-    setCardSelected(card)
+    setSelectedCard(card);
   }
   return (
     <>
@@ -20,7 +20,7 @@ function Dashboard() {
           )
         })}
       </CardContainer>
-      {cardSelected && <CardDashboard card={cardSelected} />}
+      {selectedCard && <CardDashboard card={selectedCard} />}
     </>
   )
 }

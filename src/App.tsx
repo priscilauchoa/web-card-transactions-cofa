@@ -1,6 +1,6 @@
-import './App.css'
-import React from 'react'
-import Dashboard from './containers/Dashboard/Dashboard'
+import "./App.css";
+import React from "react";
+import Dashboard from "./containers/Dashboard/Dashboard";
 
 function App() {
   return (
@@ -8,4 +8,4 @@ function App() {
   )
 }
 
-export default App
+export default App;

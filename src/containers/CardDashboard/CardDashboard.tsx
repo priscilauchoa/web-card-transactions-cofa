@@ -9,26 +9,21 @@ interface CardDashboardProps {
 }
 
 function CardDashboard({ card }: CardDashboardProps) {
-  const transactions = useFetchTransactions(card.id)
-  const [filteredTransactions, setFilteredTransactions] = useState<Array<Transaction>>()
-
+  const transactions = useFetchTransactions(card.id);
+  const [filteredTransactions, setFilteredTransactions] = useState<Array<Transaction>>();
 
   useEffect(() => {
     setFilteredTransactions(transactions);
-  }, [transactions])
-
+  }, [transactions]);
 
   const HandleOnFiltered = (filtered: Array<Transaction>) => {
-    setFilteredTransactions(filtered)
+    setFilteredTransactions(filtered);
   }
 
   return (
     <>
       {transactions && <TransactionFilter card={card} transactions={transactions} onFiltered={HandleOnFiltered} />}
-      {filteredTransactions &&
-        <TransactionDetails card={card}
-          filteredData={filteredTransactions}
-        />}
+      {filteredTransactions && <TransactionDetails card={card} transactions={filteredTransactions} />}
     </>
   )
 }

@@ -8,17 +8,18 @@ interface CardProps {
 }
 
 function Card({ card, onSelect }: CardProps) {
-  const { id, description, type } = card;
+  const { id, description, type } = card
 
   const handleOnSelect = () => {
-    onSelect(card)
+    onSelect(card);
   }
 
   return (
-    <CardContainer onClick={handleOnSelect} id={id} primary={type === 'private' ? true : false}>
-      <p>{description}</p>
+    <CardContainer onClick={handleOnSelect} id={id} primary={type === "private"}>
+      <h4>{description}</h4>
       <p>{id}</p>
     </CardContainer>
   )
 }
+
 export default Card; 

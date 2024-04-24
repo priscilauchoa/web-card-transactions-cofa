@@ -9,6 +9,7 @@ export const InputFilter = styled.input`
   padding: 0.6em;
   width: 100%;
 `;
+
 export const LabelFilter = styled.label`
   color: black;
   display: flex;

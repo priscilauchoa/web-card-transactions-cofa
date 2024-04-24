@@ -1,22 +1,21 @@
-import React from 'react'
-import { Card, Transaction } from '../../ApiClient/index'
-import { TransactionContainer } from './styled'
-
+import React from "react";
+import { Card, Transaction } from "../../ApiClient/index";
+import { TransactionContainer } from "./styled";
 
 interface TransactionDetailsProps {
-  filteredData: Array<Transaction>
-  card: Card
+  transactions: Array<Transaction>;
+  card: Card;
 }
 
-function TransactionDetails({ filteredData, card }: TransactionDetailsProps) {
-  return filteredData.map((data) => {
+function TransactionDetails({ transactions, card }: TransactionDetailsProps) {
+  return transactions.map((transaction) => {
     return (
-      <TransactionContainer primary={card.type === 'private' ? true : false}>
-        <p>{data.description}</p>
-        <p>{data.amount}€</p>
+      <TransactionContainer key={transaction.id} primary={card.type === "private"}>
+        <h5>{transaction.description}</h5>
+        <p>{transaction.amount}€</p>
       </TransactionContainer>
     )
   })
 }
 
-export default TransactionDetails
+export default TransactionDetails;
