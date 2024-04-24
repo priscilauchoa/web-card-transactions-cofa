@@ -1,3 +1,4 @@
+import Card from "../../components/Card/Card";
 import useFetchCards from "../../hooks/useFetchCards"
 import React from "react";
 
@@ -6,7 +7,9 @@ function Dashboard() {
   return (
     <div>
       {cards.map((card) => {
-        return (<p>{card.id}</p>)
+        return (
+          <Card key={card.id} card={card} />
+        )
       })}
     </div>
   )
