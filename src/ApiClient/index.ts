@@ -1,9 +1,12 @@
 // import { cards } from "./ApiClient/data/cards.json";
 // import { transactions } from "./ApiClient/data/cards.json";
+
+type CardType = "business" | "private";
+
 export interface Card {
   id: string;
   description: string;
-  type: string;
+  type: CardType;
 }
 
 export interface Transaction {
@@ -14,13 +17,16 @@ export interface Transaction {
 
 export async function getCards(): Promise<Array<Card>> {
   const cards = await (await import("./data/cards.json")).default;
-  return cards;
+  return cards.map((card) => ({
+    ...card,
+    type: card.type as CardType,
+  }));
 }
 
 export async function getTransactions(
   cardId: string
 ): Promise<Array<Transaction>> {
-  const transactions: Record<string, Transaction[]> = await (
+  const transactions: Record<string, Array<Transaction>> = await (
     await import("./data/transactions.json")
   ).default;
 
