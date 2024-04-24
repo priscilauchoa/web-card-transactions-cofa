@@ -1,14 +1,10 @@
 import './App.css'
 import React from 'react'
-import useFetchCards from './hooks/useFetchCards'
-import useFetchTransactions from './hooks/useFetchTransaction'
+import Dashboard from './containers/Dashboard/Dashboard'
 
 function App() {
-  console.log('#### cards', useFetchCards())
-  console.log('#### transactions', useFetchTransactions('lkmfkl-mlfkm-dlkfm'))
   return (
-    <>
-    </>
+    <Dashboard />
   )
 }
 
