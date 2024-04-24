@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Transaction, getTransactions } from '../index';
+import { Transaction, getTransactions } from '../ApiClient/index';
 
 function useFetchTransactions(cardId: string): Array<Transaction> {
   const [transactions, setTransactions] = useState<Array<Transaction>>([])

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Card, getCards } from "../index";
+import { Card, getCards } from "../ApiClient/index";
 
 function useFetchCards(): Array<Card> {
   const [cards, setCards] = useState<Array<Card>>([])
