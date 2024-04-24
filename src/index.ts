@@ -1,5 +1,5 @@
-// import { cards } from "./data/cards";
-// import { transactions } from "./data/transactions";
+// import { cards } from "./ApiClient/data/cards.json";
+// import { transactions } from "./ApiClient/data/cards.json";
 export interface Card {
   id: string;
   description: string;
@@ -16,7 +16,7 @@ export async function getCards(): Promise<Card[]> {
   return cards;
 }
 
-export async function getTransactions(cardId: string): Promise<Card[]> {
+export async function getTransactions(cardId: string): Promise<Transaction[]> {
   const transactions: Record<string, Transaction[]> = await (
     await import("./ApiClient/data/transactions.json")
   ).default;
