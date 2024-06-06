@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, ChangeEvent } from "react"
+import { useEffect, useRef, ChangeEvent } from "react"
 import { Card, Transaction } from "../../ApiClient";
 import { InputFilter, LabelFilter } from "./styled";
 

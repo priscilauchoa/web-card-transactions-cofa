@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import useFetchTransactions from "../../hooks/useFetchTransactions";
 import { Card as CardType, Transaction } from "../../ApiClient/index";
 import TransactionDetails from "../../components/TransactionDetails/TransactionDetails";
