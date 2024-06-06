@@ -1,6 +1,6 @@
 import Card from "../../components/Card/Card";
 import useFetchCards from "../../hooks/useFetchCards"
-import React, { useState } from "react";
+import { useState } from "react";
 import CardDashboard from "../CardDashboard/CardDashboard";
 import { Card as CardType } from "../../ApiClient/index";
 import { CardContainer } from "./styled";
