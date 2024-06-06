@@ -23,7 +23,7 @@ function CardDashboard({ card }: CardDashboardProps) {
   return (
     <>
       {transactions && <TransactionFilter card={card} transactions={transactions} onFiltered={HandleOnFiltered} />}
-      {filteredTransactions && <TransactionDetails card={card} transactions={filteredTransactions} />}
+      {filteredTransactions && <ul><TransactionDetails card={card} transactions={filteredTransactions} /></ul>}
     </>
   )
 }

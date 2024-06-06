@@ -19,6 +19,7 @@ function TransactionFilter({ card, transactions, onFiltered }: TransactionFilter
 
   const handleFilterAmount = (e: ChangeEvent<HTMLInputElement>) => {
     const amount = parseFloat(e.target.value);
+    console.log(e.target.value)
     const filtered = amount ? transactions.filter((value) => value.amount >= amount) : transactions;
     onFiltered(filtered);
   }

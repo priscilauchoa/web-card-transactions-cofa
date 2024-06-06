@@ -8,6 +8,7 @@ export const InputFilter = styled.input`
   margin: 8px 0 30px 0;
   padding: 0.6em;
   width: 100%;
+  border: solid 2px black;
 `;
 
 export const LabelFilter = styled.label`

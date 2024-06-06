@@ -1,4 +1,3 @@
-import React from "react";
 import { Card, Transaction } from "../../ApiClient/index";
 import { TransactionContainer } from "./styled";
 
@@ -8,6 +7,7 @@ interface TransactionDetailsProps {
 }
 
 function TransactionDetails({ transactions, card }: TransactionDetailsProps) {
+
   return transactions.map((transaction) => {
     return (
       <TransactionContainer key={transaction.id} primary={card.type === "private"}>
